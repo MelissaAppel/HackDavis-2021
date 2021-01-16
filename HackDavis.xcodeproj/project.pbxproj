@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9252228F25B35C12009344E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9252228E25B35C12009344E0 /* ProfileViewController.swift */; };
+		99AFF45725B36BAA00B137A7 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF45625B36BAA00B137A7 /* MainFeedViewController.swift */; };
+		99AFF45C25B36BE500B137A7 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF45B25B36BE500B137A7 /* DetailPostViewController.swift */; };
+		99AFF46125B36C0500B137A7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF46025B36C0500B137A7 /* MapViewController.swift */; };
+		99AFF46625B36C1F00B137A7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF46525B36C1F00B137A7 /* ChatViewController.swift */; };
 		DAE5F6F625B3464A002E9D99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5F6F525B3464A002E9D99 /* AppDelegate.swift */; };
 		DAE5F6F825B3464A002E9D99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5F6F725B3464A002E9D99 /* SceneDelegate.swift */; };
 		DAE5F6FA25B3464A002E9D99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5F6F925B3464A002E9D99 /* ViewController.swift */; };
@@ -37,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		9252228E25B35C12009344E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		99AFF45625B36BAA00B137A7 /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		99AFF45B25B36BE500B137A7 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		99AFF46025B36C0500B137A7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		99AFF46525B36C1F00B137A7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		DAE5F6F225B3464A002E9D99 /* HackDavis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackDavis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE5F6F525B3464A002E9D99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE5F6F725B3464A002E9D99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +117,10 @@
 				DAE5F70025B3464D002E9D99 /* LaunchScreen.storyboard */,
 				DAE5F70325B3464D002E9D99 /* Info.plist */,
 				9252228E25B35C12009344E0 /* ProfileViewController.swift */,
+				99AFF45625B36BAA00B137A7 /* MainFeedViewController.swift */,
+				99AFF45B25B36BE500B137A7 /* DetailPostViewController.swift */,
+				99AFF46025B36C0500B137A7 /* MapViewController.swift */,
+				99AFF46525B36C1F00B137A7 /* ChatViewController.swift */,
 			);
 			path = HackDavis;
 			sourceTree = "<group>";
@@ -262,9 +274,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE5F6FA25B3464A002E9D99 /* ViewController.swift in Sources */,
+				99AFF45725B36BAA00B137A7 /* MainFeedViewController.swift in Sources */,
+				99AFF46625B36C1F00B137A7 /* ChatViewController.swift in Sources */,
 				DAE5F6F625B3464A002E9D99 /* AppDelegate.swift in Sources */,
 				9252228F25B35C12009344E0 /* ProfileViewController.swift in Sources */,
 				DAE5F6F825B3464A002E9D99 /* SceneDelegate.swift in Sources */,
+				99AFF45C25B36BE500B137A7 /* DetailPostViewController.swift in Sources */,
+				99AFF46125B36C0500B137A7 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

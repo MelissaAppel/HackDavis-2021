@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-417" y="80"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Feed View Controller-->
         <scene sceneID="Xkz-ec-s7T">
             <objects>
-                <viewController id="S7Z-6F-lef" sceneMemberID="viewController">
+                <viewController id="S7Z-6F-lef" customClass="MainFeedViewController" customModule="HackDavis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Plc-Ut-CuA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="2660.8695652173915" y="664.95535714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Post View Controller-->
         <scene sceneID="oBK-9U-EBV">
             <objects>
-                <viewController id="6IR-y7-Qbg" sceneMemberID="viewController">
+                <viewController id="6IR-y7-Qbg" customClass="DetailPostViewController" customModule="HackDavis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="86m-2x-T0C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="3573.913043478261" y="664.95535714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="S85-UY-6oW">
             <objects>
-                <viewController id="96s-OE-Cgn" sceneMemberID="viewController">
+                <viewController id="96s-OE-Cgn" customClass="MapViewController" customModule="HackDavis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ku8-k3-kT4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,7 +259,7 @@
         <!--Chats-->
         <scene sceneID="3Rc-RL-aGx">
             <objects>
-                <viewController id="5kX-Bc-eyR" sceneMemberID="viewController">
+                <viewController id="5kX-Bc-eyR" customClass="ChatViewController" customModule="HackDavis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P0W-sH-8gb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,6 +339,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6Ek-Mc-XiX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wwE-yi-ZGA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
