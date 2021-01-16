@@ -210,32 +210,36 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rnD-PA-vbV"/>
+                    <connections>
+                        <segue destination="96s-OE-Cgn" kind="show" id="XAz-9b-89F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6e-NX-4GG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3573.913043478261" y="664.95535714285711"/>
         </scene>
-        <!--Map View Controller-->
+        <!--MapViewController-->
         <scene sceneID="S85-UY-6oW">
             <objects>
-                <viewController id="96s-OE-Cgn" customClass="MapViewController" customModule="HackDavis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MapViewController" id="96s-OE-Cgn" customClass="MapViewController" customModule="HackDavis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ku8-k3-kT4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-Nu-U4I">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pm7-wQ-D2W"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="centerX" secondItem="ku8-k3-kT4" secondAttribute="centerX" id="6lx-dI-qf7"/>
-                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="leading" secondItem="pm7-wQ-D2W" secondAttribute="leading" id="7Vo-3A-1Is"/>
-                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="top" secondItem="ku8-k3-kT4" secondAttribute="topMargin" constant="-44" id="YFT-AO-YPa"/>
-                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="centerY" secondItem="ku8-k3-kT4" secondAttribute="centerY" id="kma-zb-DCC"/>
+                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="centerX" secondItem="ku8-k3-kT4" secondAttribute="centerX" id="agj-JZ-Ohx"/>
+                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="top" secondItem="pm7-wQ-D2W" secondAttribute="top" id="dvt-cl-dMQ"/>
+                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="bottom" secondItem="pm7-wQ-D2W" secondAttribute="bottom" id="umo-30-hUn"/>
+                            <constraint firstItem="aJw-Nu-U4I" firstAttribute="leading" secondItem="pm7-wQ-D2W" secondAttribute="leading" id="ykE-yh-DGE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="niz-Wv-5hI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXX-he-TYF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
