@@ -19,7 +19,6 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Loading...")
         //Initialize the firebase UI
         if FirebaseApp.app() == nil {
             FirebaseApp.configure()
@@ -29,22 +28,14 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         authUI?.delegate = self
         let providers : [FUIAuthProvider] = [FUIGoogleAuth()]
         authUI?.providers = providers
-        print(authUI as Any)
-        print("Loading Completed")
-        print("Current User : ")
-        print(Auth.auth().currentUser)
-//        if Auth.auth().currentUser != nil {
-//            let userID = (Auth.auth().currentUser?.uid)!
-//            UserDefaults.standard.set(true, forKey: "logIn")
-//            UserDefaults.standard.set(userID, forKey: "currentUserID")
-//            MyDatabase.shared.setCurrentUserID(currentUserID: userID)
-//        }else{
-//            MyDatabase.shared.setCurrentUserID(currentUserID: "")
-//        }
-    }
-        
-    override func viewDidAppear(_ animated: Bool){
-           
+        if Auth.auth().currentUser != nil {
+            let userID = (Auth.auth().currentUser?.uid)!
+            UserDefaults.standard.set(true, forKey: "logIn")
+            UserDefaults.standard.set(userID, forKey: "currentUserID")
+            MyDatabase.shared.setCurrentUserID(currentUserID: userID)
+        }else{
+            MyDatabase.shared.setCurrentUserID(currentUserID: "")
+        }
     }
 
     @IBAction func buttonPressed(_ sender: Any) {
@@ -69,11 +60,11 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
             return
         }
         print("signed in??")
-//        let userID = (Auth.auth().currentUser?.uid)!
-//        UserDefaults.standard.set(true, forKey: "logIn")
-//        UserDefaults.standard.set(userID, forKey: "currentUserID")
-//        MyDatabase.shared.setCurrentUserID(currentUserID: userID)
-//        //Segue to the next screen
+        let userID = (Auth.auth().currentUser?.uid)!
+        UserDefaults.standard.set(true, forKey: "logIn")
+        UserDefaults.standard.set(userID, forKey: "currentUserID")
+        MyDatabase.shared.setCurrentUserID(currentUserID: userID)
+        //Segue to the next screen
         self.performSegue(withIdentifier: "loginSegue", sender: nil)
         
         func application(_ app: UIApplication, open url: URL,

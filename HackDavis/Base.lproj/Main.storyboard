@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FV7-as-jDi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,10 +20,14 @@
                         <viewLayoutGuide key="safeArea" id="5u5-dj-XR2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="notLoggedIn" modalPresentationStyle="fullScreen" id="06N-HC-d0F"/>
+                        <segue destination="6Ek-Mc-XiX" kind="presentation" identifier="loggedIn" modalPresentationStyle="fullScreen" id="Fq6-pe-vPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvm-bp-JW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1446.376811594203" y="79.6875"/>
+            <point key="canvasLocation" x="-1465" y="98"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -32,22 +37,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35d-WX-VoO">
-                                <rect key="frame" x="133" y="423" width="148" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Get Started"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qws-X6-wcz">
+                                <rect key="frame" x="20" y="431" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Getting Started"/>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fKr-Je-ZOx"/>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o6K-Za-a0j"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="35d-WX-VoO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AQ1-QH-ST7"/>
-                            <constraint firstItem="35d-WX-VoO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OWK-Km-XZO"/>
-                            <constraint firstItem="35d-WX-VoO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="379" id="WYf-s9-9z0"/>
-                        </constraints>
                     </view>
                     <connections>
                         <segue destination="6Ek-Mc-XiX" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="b4H-Dk-3FU"/>
@@ -55,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-445" y="-355"/>
+            <point key="canvasLocation" x="-446.37681159420293" y="-355.58035714285711"/>
         </scene>
         <!--Main Feed View Controller-->
         <scene sceneID="Xkz-ec-s7T">
@@ -407,6 +408,9 @@
             <point key="canvasLocation" x="1778" y="665"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fq6-pe-vPO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="book" catalog="system" width="128" height="102"/>

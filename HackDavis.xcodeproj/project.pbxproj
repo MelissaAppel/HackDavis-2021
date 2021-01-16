@@ -10,10 +10,10 @@
 		3B869EA212FFF099D436C7AF /* Pods_HackDavisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E7AD324ADF5721E0BE08FB /* Pods_HackDavisTests.framework */; };
 		6AE6E9ADA014DB3C7F467BAE /* Pods_HackDavis_HackDavisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494E2496B504C3BAB5404FB7 /* Pods_HackDavis_HackDavisUITests.framework */; };
 		9252228F25B35C12009344E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9252228E25B35C12009344E0 /* ProfileViewController.swift */; };
-		926BB69F25B37EA100A934CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 926BB69E25B37EA100A934CD /* GoogleService-Info.plist */; };
 		926BB6A425B37EEB00A934CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BB6A325B37EEB00A934CD /* LoginViewController.swift */; };
 		926BB6A925B37F9B00A934CD /* MyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BB6A825B37F9B00A934CD /* MyDatabase.swift */; };
 		926BB6AE25B3808800A934CD /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BB6AD25B3808800A934CD /* InitialViewController.swift */; };
+		926BB6DA25B393CF00A934CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 926BB6D925B393CF00A934CD /* GoogleService-Info.plist */; };
 		99AFF45725B36BAA00B137A7 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF45625B36BAA00B137A7 /* MainFeedViewController.swift */; };
 		99AFF45C25B36BE500B137A7 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF45B25B36BE500B137A7 /* DetailPostViewController.swift */; };
 		99AFF46125B36C0500B137A7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF46025B36C0500B137A7 /* MapViewController.swift */; };
@@ -51,10 +51,10 @@
 		5193A58241A7970E3767C02A /* Pods-HackDavisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDavisTests.release.xcconfig"; path = "Target Support Files/Pods-HackDavisTests/Pods-HackDavisTests.release.xcconfig"; sourceTree = "<group>"; };
 		70060A913A2CA7A42A716703 /* Pods-HackDavis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDavis.debug.xcconfig"; path = "Target Support Files/Pods-HackDavis/Pods-HackDavis.debug.xcconfig"; sourceTree = "<group>"; };
 		9252228E25B35C12009344E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		926BB69E25B37EA100A934CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		926BB6A325B37EEB00A934CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		926BB6A825B37F9B00A934CD /* MyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatabase.swift; sourceTree = "<group>"; };
 		926BB6AD25B3808800A934CD /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		926BB6D925B393CF00A934CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97EA6C0E587A902AA4C2673D /* Pods-HackDavis-HackDavisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDavis-HackDavisUITests.release.xcconfig"; path = "Target Support Files/Pods-HackDavis-HackDavisUITests/Pods-HackDavis-HackDavisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99AFF45625B36BAA00B137A7 /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		99AFF45B25B36BE500B137A7 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		DAE5F6F425B3464A002E9D99 /* HackDavis */ = {
 			isa = PBXGroup;
 			children = (
-				926BB69E25B37EA100A934CD /* GoogleService-Info.plist */,
+				926BB6D925B393CF00A934CD /* GoogleService-Info.plist */,
 				DAE5F6F525B3464A002E9D99 /* AppDelegate.swift */,
 				DAE5F6F725B3464A002E9D99 /* SceneDelegate.swift */,
 				DAE5F6FB25B3464A002E9D99 /* Main.storyboard */,
@@ -302,8 +302,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926BB6DA25B393CF00A934CD /* GoogleService-Info.plist in Resources */,
 				DAE5F70225B3464D002E9D99 /* LaunchScreen.storyboard in Resources */,
-				926BB69F25B37EA100A934CD /* GoogleService-Info.plist in Resources */,
 				DAE5F6FF25B3464D002E9D99 /* Assets.xcassets in Resources */,
 				DAE5F6FD25B3464A002E9D99 /* Main.storyboard in Resources */,
 			);
@@ -582,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -637,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
