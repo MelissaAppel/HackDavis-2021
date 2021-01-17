@@ -1,0 +1,12 @@
+version: "Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+options: "d7c938ace3bf01ba756d93f7bee99b34"
+build_time: [1610822816, 256833000]
+inputs:
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/ViewController.swift": [1610822523, 234366887]
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/MainFeedViewController.swift": [1610822698, 228479171]
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/ChatViewController.swift": [9223372036, 854775807]
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/AppDelegate.swift": [1610822523, 228260966]
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/ProfileViewController.swift": [1610822523, 233360019]
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/SceneDelegate.swift": [1610822523, 233975714]
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/DetailPostViewController.swift": [1610822756, 853698150]
+  "/Users/haruna/Documents/iOSdev/HackDavis-2021/HackDavis/MapViewController.swift": [1610822789, 294970782]
