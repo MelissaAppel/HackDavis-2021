@@ -11,6 +11,7 @@ import Firebase
 class MainFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var ref: DatabaseReference!
     
@@ -23,6 +24,7 @@ class MainFeedViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         
         
         // read
@@ -84,7 +86,33 @@ extension MainFeedViewController: UITableViewDelegate {
         performSegue(withIdentifier: "goToDetail", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        if segue.destination is DetailPostViewController {
+            let vc = segue.destination as! DetailPostViewController
+            
+        }
     }
 }
 
+extension MainFeedViewController: UISearchBarDelegate  {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty {
+            
+        } else {
+            
+        }
+        tableView.reloadData()
+    }
+    
+    // cancelling out of search and hiding keyboard
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false // remove cancel button
+        searchBar.text = "" // reset search text
+        searchBar.resignFirstResponder() // remove keyboarad
+       
+        tableView.reloadData()
+    }
+}
