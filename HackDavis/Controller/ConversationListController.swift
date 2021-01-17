@@ -14,22 +14,20 @@ class ConversationListController: UIViewController {
     
     let database = Firestore.firestore()
     var conversations : [Message] = []
-    var numConvos = 0
+    var numConvos : Int = 0
     var listOfSenders : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         conversationTableView.delegate = self
         conversationTableView.dataSource = self
+        conversationTableView.register(UINib(nibName: StaticsAndConstants.cellNibName, bundle: nil), forCellReuseIdentifier: StaticsAndConstants.cellIdentifier)
         loadConversations()
-        print(conversations.count)
-        filterConversations()
     }
     
     
-    //ARYAN: I cannot get my global conversations : [Message] to update outside of this enclosure to use in my filterConversations() function
+    //Retreives messages from firebase, currently receives all messages from every user, need to filter only selected user and implement chat message selector/picker
     func loadConversations(){
-        //get message db from firecloud, order by time sent
         database.collection(StaticsAndConstants.fStore.collectionName)
             .order(by: StaticsAndConstants.fStore.dateField)
             .addSnapshotListener { (querySnapshot, error) in
@@ -43,9 +41,13 @@ class ConversationListController: UIViewController {
                         if let messageSender = data[StaticsAndConstants.fStore.senderField] as? String, let messageBody = data[StaticsAndConstants.fStore.bodyField] as? String {
                             let newMessage = Message(sender: messageSender, body: messageBody)
                             self.conversations.append(newMessage)
+                            
                             DispatchQueue.main.async{
                                 self.conversationTableView.reloadData()
+                                let indexPath = IndexPath(row: self.conversations.count - 1, section: 0)
+                                self.conversationTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
+                            
                         }
                     }
                 }
@@ -55,7 +57,7 @@ class ConversationListController: UIViewController {
     }
     
 
-    //Create array of strings of unique senders
+    /*//Create array of strings of unique senders
     func filterConversations(){
         for i in 0..<conversations.count {
             let convo = conversations[i].sender
@@ -65,26 +67,40 @@ class ConversationListController: UIViewController {
             }
         }
         print(listOfSenders.count)
-    }
+    }*/
 }
 
 
-//Populate cells with unique sender names
+
 extension ConversationListController : UITableViewDataSource {
-    //set number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numConvos
+        return conversations.count
     }
     
-    //populates each row of table with messages.sender
+    //populates each row of table with messages.body
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let user = listOfSenders[indexPath.row]
+        let message = conversations[indexPath.row]
+        
         let cell = conversationTableView.dequeueReusableCell(withIdentifier: StaticsAndConstants.cellIdentifier, for: indexPath) as! MessageCell
-        cell.label.text = user
+        cell.label.text = message.sender
+        
+        //filter messages from current user
+        if message.sender == Auth.auth().currentUser?.email{
+            cell.messageBubble.backgroundColor = UIColor.systemYellow
+            cell.label.backgroundColor = UIColor.systemYellow
+        } else { //message is from someone else
+            cell.messageBubble.backgroundColor = UIColor.systemGreen
+            cell.label.backgroundColor = UIColor.systemGreen
+        }
         return cell
     }
+    
+    
 }
 
 extension ConversationListController : UITableViewDelegate {
-    
+    //Called when text cell is clicked - currently disabled
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }*/
 }
