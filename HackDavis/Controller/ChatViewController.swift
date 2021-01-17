@@ -114,13 +114,9 @@ extension ChatViewController : UITableViewDataSource {
         
         //filter messages from current user
         if message.sender == Auth.auth().currentUser?.email{
-            cell.leftImageView.isHidden = true
-            cell.rightImageView.isHidden = false
-            cell.messageBubble.backgroundColor = UIColor.systemIndigo
+            //cell.messageBubble.backgroundColor = UIColor.systemYellow
             //cell.label.backgroundColor = UIColor.systemYellow
         } else { //message is from someone else
-            cell.leftImageView.isHidden = false
-            cell.rightImageView.isHidden = true
             //cell.messageBubble.backgroundColor = UIColor.systemGreen
             //cell.label.backgroundColor = UIColor.systemGreen
         }

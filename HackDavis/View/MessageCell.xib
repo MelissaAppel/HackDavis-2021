@@ -10,29 +10,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="62" id="KGk-i7-Jjw" customClass="MessageCell" customModule="HackDavis" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="569" height="62"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="71" id="KGk-i7-Jjw" customClass="MessageCell" customModule="HackDavis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="422" height="71"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="569" height="62"/>
+                <rect key="frame" x="0.0" y="0.0" width="422" height="71"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qAQ-ok-w7b">
-                        <rect key="frame" x="10" y="10" width="549" height="40"/>
+                        <rect key="frame" x="10" y="10" width="402" height="50"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.forward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mgT-c3-TJX">
-                                <rect key="frame" x="0.0" y="1" width="40" height="37.5"/>
-                                <color key="tintColor" red="0.56470588239999997" green="0.2156862745" blue="0.17821596749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gVd-Wn-YVI"/>
-                                    <constraint firstAttribute="width" constant="40" id="vyq-eL-hHz"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3t-lk-bNz">
-                                <rect key="frame" x="60" y="0.0" width="429" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-J2-jH5">
-                                        <rect key="frame" x="18" y="10" width="401" height="20"/>
+                                        <rect key="frame" x="18" y="10" width="314" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -46,9 +38,8 @@
                                     <constraint firstAttribute="bottom" secondItem="NKq-J2-jH5" secondAttribute="bottom" constant="10" id="y4a-Ss-czF"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.left.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3pH-Bj-3cf">
-                                <rect key="frame" x="509" y="1" width="40" height="37.5"/>
-                                <color key="tintColor" red="0.90980392160000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3pH-Bj-3cf">
+                                <rect key="frame" x="362" y="0.0" width="40" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="mHd-Zk-hM9"/>
                                     <constraint firstAttribute="height" constant="40" id="qc7-6a-sPr"/>
@@ -69,15 +60,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="label" destination="NKq-J2-jH5" id="gb0-Jz-FgK"/>
-                <outlet property="leftImageView" destination="mgT-c3-TJX" id="TJd-2e-z0v"/>
                 <outlet property="messageBubble" destination="J3t-lk-bNz" id="cQU-Zs-e6Z"/>
-                <outlet property="rightImageView" destination="3pH-Bj-3cf" id="xsI-BO-T7g"/>
             </connections>
-            <point key="canvasLocation" x="-41.304347826086961" y="93.75"/>
+            <point key="canvasLocation" x="65.217391304347828" y="166.40625"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="106"/>
-        <image name="arrowshape.turn.up.left.2" catalog="system" width="128" height="86"/>
-    </resources>
 </document>

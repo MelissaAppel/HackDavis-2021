@@ -85,11 +85,11 @@ extension ConversationListController : UITableViewDataSource {
         
         //filter messages from current user
         if sender == Auth.auth().currentUser?.email{
-            cell.leftImageView.isHidden = true
-            cell.rightImageView.isHidden = true
+            //cell.messageBubble.backgroundColor = UIColor.systemYellow
+            //cell.label.backgroundColor = UIColor.systemYellow
         } else { //message is from someone else
-            cell.leftImageView.isHidden = true
-            cell.rightImageView.isHidden = true
+            //cell.messageBubble.backgroundColor = UIColor.systemGreen
+            //cell.label.backgroundColor = UIColor.systemGreen
         }
         return cell
     }
