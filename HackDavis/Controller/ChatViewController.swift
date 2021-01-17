@@ -24,7 +24,17 @@ class ChatViewController: UIViewController {
             loadMessages()
         }
         
-        //Retreives messages from firebase, currently receives all messages from every user, need to filter only selected user and implement chat message selector/picker
+    
+    @IBAction func logOutPressed(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out", signOutError)
+        }
+    }
+    
+    //Retreives messages from firebase, currently receives all messages from every user, need to filter only selected user and implement chat message selector/picker
         func loadMessages(){
             db.collection(StaticsAndConstants.fStore.collectionName)
                 .order(by: StaticsAndConstants.fStore.dateField)
