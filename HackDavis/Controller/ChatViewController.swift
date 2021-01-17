@@ -54,7 +54,16 @@ class ChatViewController: UIViewController {
             
         }
         
-        //when send it pressed, uploads message data to firebase
+    @IBAction func logOutPressed(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+                do {
+                    try firebaseAuth.signOut()
+                } catch let signOutError as NSError {
+                    print("Error signing out", signOutError)
+                }
+    }
+    
+    //when send it pressed, uploads message data to firebase
         @IBAction func sendPressed(_ sender: UIButton) {
             if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
                 db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody,
