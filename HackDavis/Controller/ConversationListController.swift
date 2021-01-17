@@ -17,6 +17,7 @@ class ConversationListController: UIViewController {
     var conversationsSenders : [Message] = []
     var numConvos : Int = 0
     var listOfSenders : [String] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class ConversationListController: UIViewController {
                     for doc in snapshotDocuments{
                         let data = doc.data()
                         if let messageSender = data[StaticsAndConstants.fStore.senderField] as? String, let messageBody = data[StaticsAndConstants.fStore.bodyField] as? String {
-                            let newMessage = Message(sender: messageSender, body: messageBody)
+                            let newMessage = Message(sender: messageSender, body: messageBody, them: "")
                             self.conversations.append(newMessage)
                             
                             DispatchQueue.main.async{
@@ -60,7 +61,7 @@ class ConversationListController: UIViewController {
     func filterConversations(){
         for i in 0..<conversations.count {
             let convo = conversations[i].sender
-            if !listOfSenders.contains(convo) {
+            if !listOfSenders.contains(convo) && convo != Auth.auth().currentUser?.email{
                 listOfSenders.append(convo)
                 numConvos += 1
             }
@@ -97,8 +98,10 @@ extension ConversationListController : UITableViewDataSource {
 }
 
 extension ConversationListController : UITableViewDelegate {
-    //Called when text cell is clicked - currently disabled
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }*/
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        MyDatabase.theirEmail = listOfSenders[indexPath.row]
+        print(MyDatabase.theirEmail)
+        performSegue(withIdentifier: "ConvosToChat", sender: self)
+    }
 }

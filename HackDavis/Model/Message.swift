@@ -10,4 +10,6 @@ import Foundation
 struct Message{
     var sender : String
     let body : String
+    var them : String
+
 }

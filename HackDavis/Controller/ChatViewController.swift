@@ -37,8 +37,8 @@ class ChatViewController: UIViewController {
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments{
                         let data = doc.data()
-                        if let messageSender = data[StaticsAndConstants.fStore.senderField] as? String, let messageBody = data[StaticsAndConstants.fStore.bodyField] as? String {
-                            let newMessage = Message(sender: messageSender, body: messageBody)
+                        if let messageSender = data[StaticsAndConstants.fStore.senderField] as? String, let messageBody = data[StaticsAndConstants.fStore.bodyField] as? String, let theirEmail = MyDatabase.theirEmail as? String {
+                            let newMessage = Message(sender: messageSender, body: messageBody, them : theirEmail)
                             self.messages.append(newMessage)
                             
                             DispatchQueue.main.async{
@@ -66,8 +66,8 @@ class ChatViewController: UIViewController {
     
     //when send it pressed, uploads message data to firebase
     @IBAction func sendPressed(_ sender: UIButton) {
-        if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody,
+        if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email{
+            db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody, StaticsAndConstants.fStore.theirField : MyDatabase.theirEmail,
                 StaticsAndConstants.fStore.dateField: Date().timeIntervalSince1970
                 ]) { (error) in
                 if let e = error {

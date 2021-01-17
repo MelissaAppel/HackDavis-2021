@@ -19,7 +19,10 @@ class MyDatabase {
     var flavorArray = [String]()
     var typeArray = [String]()
 
-    private init() {}
+    static var myEmail = ""
+    static var theirEmail = ""
+    
+    public init() {}
     // Setter functions
 
     func setAllPosts(posts:[[String:Any]]){
