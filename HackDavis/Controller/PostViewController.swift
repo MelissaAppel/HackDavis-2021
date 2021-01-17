@@ -11,22 +11,23 @@ import Firebase
 class PostViewController: UIViewController {
 
     @IBOutlet weak var foodNameTextField: UITextField!
-    @IBOutlet weak var foodTypeTextField: UITextField!
-    @IBOutlet weak var spicyTextField: UITextField!
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var foodTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var spicySegmentedControl: UISegmentedControl!
     
-<<<<<<< HEAD
+    @IBOutlet weak var descriptionLabel: UITextField!
+    
+    @IBOutlet weak var foodImageView: UIImageView!
+    
+    
     var ref: DatabaseReference! = Database.database().reference()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-=======
-    let db = Firestore.firestore()
+    var foodType: String?
+    var spice: String?
+    var id = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
->>>>>>> 29806d7465235038dc49dff721dceaad1db6d2b8
+
         // Do any additional setup after loading the view.
     }
     
@@ -37,47 +38,42 @@ class PostViewController: UIViewController {
     
     @IBAction func onPostButtonPressed(_ sender: Any) {
         // send data to database
-<<<<<<< HEAD
+
         var dataDictionary: [String: Any] = [:]
-        dataDictionary["description"] = descriptionTextView.text
-        dataDictionary["dishName"] = foodTypeTextField.text
-        dataDictionary["spice"] = spicyTextField.text
-        dataDictionary["type"] = foodTypeTextField.text
-        ref.child("posts").childByAutoId().setValue(dataDictionary)
+        dataDictionary["description"] = descriptionLabel.text
+        dataDictionary["dishName"] = foodNameTextField.text
+        dataDictionary["flavor"] = spice
+        dataDictionary["type"] = foodType
+        dataDictionary["latitude"] = 5.0 as! Double
+        dataDictionary["longitude"] = 4.0 as! Double
+        // just an example 
+        dataDictionary["image"] = "https://firebasestorage.googleapis.com/v0/b/hack-davis-f5888.appspot.com/o/Cauliflower%20Tacos.jpg?alt=media&token=6339f58f-4561-428b-b49d-be44c06f16f4"
+        ref.child("Database").child("posts").child(String(id)).setValue(dataDictionary)
+        id += 1
         self.dismiss(animated: true, completion: nil)
     
     }
 
-=======
-        let foodName = foodNameTextField.text
-        let foodType = foodTypeTextField.text
-        let spicy = spicyTextField.text
-        let description = descriptionTextView.text
-        // add food image
-        
-        db.collection("posts").addDocument(data: [
-            "description" : description,
-            "dishName": foodName,
-            "spice": spicy,
-            "type": foodType
-        ]) { (error) in
-            if let e = error  {
-                print(e)
-            } else {
-                print("successfully saved")
-            }
+    @IBAction func foodTypeValueChanged(_ sender: UISegmentedControl){
+        if sender.selectedSegmentIndex == 0 {
+            foodType = "Veg"
+        } else if sender.selectedSegmentIndex == 1 {
+            foodType = "Non-veg"
+        } else {
+            foodType = "vegan"
         }
+    }
+    @IBAction func spicyValueChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            spice = "sweet"
+        } else if sender.selectedSegmentIndex == 1 {
+            spice = "normal"
+        } else {
+            spice = "spicy"
+        }
+    }
     
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
->>>>>>> 29806d7465235038dc49dff721dceaad1db6d2b8
-
+       
+    
 }
+
