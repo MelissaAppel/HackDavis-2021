@@ -15,6 +15,7 @@
 import UIKit
 import Firebase
 import FirebaseUI
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
     class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,7 @@ import FirebaseUI
         // Override point for customization after application launch.
         FirebaseApp.configure()
         let db = Firestore.firestore()
+        IQKeyboardManager.shared.enable = true
         UINavigationBar.appearance().isHidden = false
         return true
     }
