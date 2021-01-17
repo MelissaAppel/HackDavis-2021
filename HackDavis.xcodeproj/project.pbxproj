@@ -13,6 +13,7 @@
 		926BB6A425B37EEB00A934CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BB6A325B37EEB00A934CD /* LoginViewController.swift */; };
 		926BB6A925B37F9B00A934CD /* MyDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BB6A825B37F9B00A934CD /* MyDatabase.swift */; };
 		926BB6AE25B3808800A934CD /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926BB6AD25B3808800A934CD /* InitialViewController.swift */; };
+		92707BB225B4782500389CC6 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92707BB125B4782500389CC6 /* PostTableViewCell.swift */; };
 		99AFF45725B36BAA00B137A7 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF45625B36BAA00B137A7 /* MainFeedViewController.swift */; };
 		99AFF45C25B36BE500B137A7 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF45B25B36BE500B137A7 /* DetailPostViewController.swift */; };
 		99AFF46125B36C0500B137A7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF46025B36C0500B137A7 /* MapViewController.swift */; };
@@ -61,6 +62,7 @@
 		926BB6A325B37EEB00A934CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		926BB6A825B37F9B00A934CD /* MyDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatabase.swift; sourceTree = "<group>"; };
 		926BB6AD25B3808800A934CD /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		92707BB125B4782500389CC6 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		97EA6C0E587A902AA4C2673D /* Pods-HackDavis-HackDavisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDavis-HackDavisUITests.release.xcconfig"; path = "Target Support Files/Pods-HackDavis-HackDavisUITests/Pods-HackDavis-HackDavisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99AFF45625B36BAA00B137A7 /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		99AFF45B25B36BE500B137A7 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				DA2862A425B3AB82005151D1 /* RegisterController.swift */,
 				DA2862B125B3B2E0005151D1 /* LoginPageController.swift */,
 				DA11C51025B419F200094D5F /* ConversationListController.swift */,
+				92707BB125B4782500389CC6 /* PostTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			files = (
 				926BB6A425B37EEB00A934CD /* LoginViewController.swift in Sources */,
 				926BB6AE25B3808800A934CD /* InitialViewController.swift in Sources */,
+				92707BB225B4782500389CC6 /* PostTableViewCell.swift in Sources */,
 				DA2862A525B3AB82005151D1 /* RegisterController.swift in Sources */,
 				926BB6A925B37F9B00A934CD /* MyDatabase.swift in Sources */,
 				DA2862B725B3B777005151D1 /* StaticsAndConstants.swift in Sources */,
