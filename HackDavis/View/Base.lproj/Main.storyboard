@@ -24,9 +24,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hunger Pals" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-a4-Edl">
+                                <rect key="frame" x="20" y="144" width="374" height="393"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="393" id="1rK-VA-UnL"/>
+                                    <constraint firstAttribute="width" constant="374" id="5I9-QN-hIy"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5u5-dj-XR2"/>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5u5-dj-XR2" firstAttribute="trailing" secondItem="rC0-a4-Edl" secondAttribute="trailing" constant="20" id="S5o-Hd-SCt"/>
+                            <constraint firstItem="rC0-a4-Edl" firstAttribute="top" secondItem="5u5-dj-XR2" secondAttribute="top" constant="100" id="YAd-lz-glz"/>
+                            <constraint firstItem="rC0-a4-Edl" firstAttribute="leading" secondItem="5u5-dj-XR2" secondAttribute="leading" constant="20" id="mcj-Sx-Djw"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="notLoggedIn" modalPresentationStyle="fullScreen" id="06N-HC-d0F"/>
@@ -35,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvm-bp-JW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2341" y="80"/>
+            <point key="canvasLocation" x="-2342.0289855072465" y="79.6875"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -45,21 +57,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-xg-ohO">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-xg-ohO">
                                 <rect key="frame" x="5" y="64" width="404" height="778"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j27-Ee-Rur">
-                                        <rect key="frame" x="0.0" y="150" width="404" height="336"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YOJ-ys-pAv">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="696"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HUNGER PALS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rts-Bn-nni">
-                                                <rect key="frame" x="63" y="0.0" width="278" height="100"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="40"/>
-                                                <color key="textColor" red="0.90980392160000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hunger Pals" translatesAutoresizingMaskIntoConstraints="NO" id="PqX-YQ-sKa">
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qws-X6-wcz">
-                                                <rect key="frame" x="120" y="110" width="164" height="42"/>
+                                                <rect key="frame" x="118" y="500" width="164" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="Getting Started">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,18 +76,8 @@
                                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o6K-Za-a0j"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ah-4I-bFW">
-                                                <rect key="frame" x="177.66666666666666" y="162" width="49" height="62"/>
-                                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="20"/>
-                                                <state key="normal" title="Login">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="RGy-4e-AvC" kind="show" id="RTq-pm-76F"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zza-Uj-rnm">
-                                                <rect key="frame" x="164.66666666666666" y="234" width="75" height="62"/>
+                                                <rect key="frame" x="162.66666666666666" y="542" width="75" height="62"/>
                                                 <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="20"/>
                                                 <state key="normal" title="Register">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,32 +86,40 @@
                                                     <segue destination="25R-RO-kAN" kind="show" id="hiK-BD-pya"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ah-4I-bFW">
+                                                <rect key="frame" x="175.66666666666666" y="604" width="49" height="62"/>
+                                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="20"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="RGy-4e-AvC" kind="show" id="RTq-pm-76F"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5K-na-aF0">
-                                                <rect key="frame" x="170.66666666666666" y="306" width="63" height="30"/>
+                                                <rect key="frame" x="168.66666666666666" y="666" width="63" height="30"/>
                                                 <state key="normal" title="Test Map"/>
                                                 <connections>
                                                     <segue destination="6IR-y7-Qbg" kind="show" id="4V4-2B-R74"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="TM5-S8-14Y"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="j27-Ee-Rur" firstAttribute="leading" secondItem="pqh-xg-ohO" secondAttribute="leading" id="5T4-KO-imQ"/>
-                                    <constraint firstItem="j27-Ee-Rur" firstAttribute="top" secondItem="pqh-xg-ohO" secondAttribute="top" constant="150" id="5nY-x1-z4u"/>
-                                    <constraint firstAttribute="trailing" secondItem="j27-Ee-Rur" secondAttribute="trailing" id="NQF-hN-VQa"/>
+                                    <constraint firstItem="YOJ-ys-pAv" firstAttribute="top" secondItem="pqh-xg-ohO" secondAttribute="top" id="9tQ-yg-XBn"/>
+                                    <constraint firstItem="YOJ-ys-pAv" firstAttribute="leading" secondItem="pqh-xg-ohO" secondAttribute="leading" id="N1d-pf-SId"/>
+                                    <constraint firstAttribute="trailing" secondItem="YOJ-ys-pAv" secondAttribute="trailing" id="fOa-gy-1rg"/>
+                                    <constraint firstAttribute="bottom" secondItem="YOJ-ys-pAv" secondAttribute="bottom" id="hQk-tT-BgV"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pqh-xg-ohO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="a1Q-Wk-GWt"/>
-                            <constraint firstItem="pqh-xg-ohO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="cQO-2E-tqg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pqh-xg-ohO" secondAttribute="bottom" constant="20" id="fam-ky-Plg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pqh-xg-ohO" secondAttribute="trailing" constant="5" id="yTx-gp-fFl"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rbh-z0-5hp"/>
                     <connections>
@@ -1009,6 +1015,7 @@
         <segue reference="06N-HC-d0F"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Hunger Pals" width="500" height="500"/>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="camera" catalog="system" width="128" height="94"/>
