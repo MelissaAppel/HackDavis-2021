@@ -114,11 +114,11 @@ extension ChatViewController : UITableViewDataSource {
         
         //filter messages from current user
         if message.sender == Auth.auth().currentUser?.email{
-            cell.messageBubble.backgroundColor = UIColor.systemYellow
-            cell.label.backgroundColor = UIColor.systemYellow
+            //cell.messageBubble.backgroundColor = UIColor.systemYellow
+            //cell.label.backgroundColor = UIColor.systemYellow
         } else { //message is from someone else
-            cell.messageBubble.backgroundColor = UIColor.systemGreen
-            cell.label.backgroundColor = UIColor.systemGreen
+            //cell.messageBubble.backgroundColor = UIColor.systemGreen
+            //cell.label.backgroundColor = UIColor.systemGreen
         }
         return cell
     }
