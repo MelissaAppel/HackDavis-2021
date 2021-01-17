@@ -34,15 +34,17 @@ class InitialViewController: UIViewController {
        
     }
     func segue() {
-        if UserDefaults.standard.bool(forKey: "logIn") == true {
-            print("User logged in ")
-            let userId = UserDefaults.standard.string(forKey: "currentUserID")!
-            MyDatabase.shared.setCurrentUserID(currentUserID: userId)
-           self.performSegue(withIdentifier: "loggedIn", sender: nil)
-        }else{
-            print("User not Logged in ")
-            self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
-        }
+        self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
+
+//        if UserDefaults.standard.bool(forKey: "logIn") == true {
+//            print("User logged in ")
+//            let userId = UserDefaults.standard.string(forKey: "currentUserID")!
+//            MyDatabase.shared.setCurrentUserID(currentUserID: userId)
+//           self.performSegue(withIdentifier: "loggedIn", sender: nil)
+//        }else{
+//            print("User not Logged in ")
+//            self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
+//        }
     }
     func getData() {
         //Network request snippet
@@ -55,7 +57,6 @@ class InitialViewController: UIViewController {
                      print(error.localizedDescription)
                   } else if let data = data {
                      let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                   print("Coming here")
                    self.posts = dataDictionary["posts"] as! [[String:Any]]
 //                   print(self.posts)
                    MyDatabase.shared.setAllPosts(posts: self.posts)
@@ -75,6 +76,7 @@ class InitialViewController: UIViewController {
                         let type = post["type"] as! String
                             self.typeArray.append(type)
                     }
+                    
                     MyDatabase.shared.setDescriptionArray(descriptionArray: self.descriptionArray)
                     MyDatabase.shared.setDishNameArray(dishNameArray: self.dishNameArray)
                     MyDatabase.shared.setImageArray(imageArray: self.imageArray)

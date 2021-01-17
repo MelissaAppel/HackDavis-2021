@@ -12,6 +12,7 @@ class MyDatabase {
 
     var currentUserID = ""
     var allPosts = [[String:Any]]()
+    
     var descriptionArray = [String]()
     var dishNameArray = [String]()
     var imageArray = [String]()
