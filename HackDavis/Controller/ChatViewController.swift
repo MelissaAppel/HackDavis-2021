@@ -27,9 +27,7 @@ class ChatViewController: UIViewController {
     
     func loadMessages(){
         
-        db.collection(StaticsAndConstants.fStore.collectionName)
-            .order(by: StaticsAndConstants.fStore.dateField)
-            .addSnapshotListener { (querySnapshot, error) in
+        db.collection(StaticsAndConstants.fStore.collectionName).addSnapshotListener { (querySnapshot, error) in
             self.messages = []
             if let e = error {
                 print("issue retreiving data \(e)")
@@ -55,9 +53,7 @@ class ChatViewController: UIViewController {
     
     @IBAction func sendPressed(_ sender: UIButton) {
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody,
-                StaticsAndConstants.fStore.dateField: Date().timeIntervalSince1970
-                ]) { (error) in
+            db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody]) { (error) in
                 if let e = error {
                     print("Error saving data to firestore")
                 } else {
