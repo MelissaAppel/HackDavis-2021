@@ -6,24 +6,61 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var chatTableView: UITableView!
+    @IBOutlet weak var messageTextField: UITextField!
+    let db = Firestore.firestore()
+    
+    var messages : [Message] = [
+        Message(sender: "1@2.com", body: "Hey!"),
+        Message(sender: "2@3.com", body: "Hello!"),
+        Message(sender: "3@4.com", body: "Hiya")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        chatTableView.delegate = self
+        chatTableView.dataSource = self
+        chatTableView.register(UINib(nibName: StaticsAndConstants.cellNibName, bundle: nil), forCellReuseIdentifier: StaticsAndConstants.cellIdentifier)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func sendPressed(_ sender: UIButton) {
+        if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody]) { (error) in
+                if let e = error {
+                    print("Error saving data to firestore")
+                } else {
+                    print("saved data")
+                }
+            }
+        }
     }
-    */
+    
 
+}
+
+extension ChatViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    //populates each row of table with messages.body
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = chatTableView.dequeueReusableCell(withIdentifier: StaticsAndConstants.cellIdentifier, for: indexPath) as! MessageCell
+        cell.label.text = messages[indexPath.row].body
+        return cell
+    }
+    
+    
+}
+
+extension ChatViewController : UITableViewDelegate {
+    //Called when text cell is clicked - currently disabled
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }*/
 }
