@@ -38,6 +38,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func render(_ location: CLLocation){
+        // the coordinates to zoom on and place a pin.
+        // should be replaced with the food location instead of the current user location
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
                                                 longitude: location.coordinate.longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
