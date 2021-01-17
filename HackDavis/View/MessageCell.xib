@@ -18,13 +18,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qAQ-ok-w7b">
-                        <rect key="frame" x="10" y="10" width="402" height="50"/>
+                        <rect key="frame" x="10" y="10" width="402" height="40"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eCF-00-zXW">
+                                <rect key="frame" x="0.0" y="1" width="40" height="37.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GFx-lm-uW1"/>
+                                    <constraint firstAttribute="width" constant="40" id="qUB-78-eVC"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3t-lk-bNz">
-                                <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
+                                <rect key="frame" x="60" y="0.0" width="282" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-J2-jH5">
-                                        <rect key="frame" x="18" y="10" width="314" height="30"/>
+                                        <rect key="frame" x="18" y="10" width="254" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -38,8 +47,10 @@
                                     <constraint firstAttribute="bottom" secondItem="NKq-J2-jH5" secondAttribute="bottom" constant="10" id="y4a-Ss-czF"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3pH-Bj-3cf">
-                                <rect key="frame" x="362" y="0.0" width="40" height="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3pH-Bj-3cf">
+                                <rect key="frame" x="362" y="1" width="40" height="37.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="mHd-Zk-hM9"/>
                                     <constraint firstAttribute="height" constant="40" id="qc7-6a-sPr"/>
@@ -60,9 +71,15 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="label" destination="NKq-J2-jH5" id="gb0-Jz-FgK"/>
+                <outlet property="leftImage" destination="eCF-00-zXW" id="6FR-f1-X8f"/>
                 <outlet property="messageBubble" destination="J3t-lk-bNz" id="cQU-Zs-e6Z"/>
+                <outlet property="rightImage" destination="3pH-Bj-3cf" id="l0K-MA-oyu"/>
             </connections>
             <point key="canvasLocation" x="65.217391304347828" y="166.40625"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
+    </resources>
 </document>
