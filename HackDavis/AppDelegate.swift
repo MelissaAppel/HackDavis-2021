@@ -25,7 +25,6 @@ import IQKeyboardManagerSwift
         FirebaseApp.configure()
         let db = Firestore.firestore()
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         UINavigationBar.appearance().isHidden = false
         return true
     }

@@ -20,12 +20,13 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         chatTableView.delegate = self
         chatTableView.dataSource = self
-        chatTableView.register(UINib(nibName: StaticsAndConstants.cellNibName, bundle: nil), forCellReuseIdentifier: StaticsAndConstants.cellIdentifier) //Links to MessageCell.xib style
+        chatTableView.register(UINib(nibName: StaticsAndConstants.cellNibName, bundle: nil), forCellReuseIdentifier: StaticsAndConstants.cellIdentifier)
+        
         loadMessages()
     }
     
-    //Retreives messages from firebase, currently receives all messages from every user, need to filter only selected user and implement chat message selector/picker
     func loadMessages(){
+        
         db.collection(StaticsAndConstants.fStore.collectionName)
             .order(by: StaticsAndConstants.fStore.dateField)
             .addSnapshotListener { (querySnapshot, error) in
@@ -42,8 +43,6 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async{
                                 self.chatTableView.reloadData()
-                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-                                self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                             
                         }
@@ -54,7 +53,6 @@ class ChatViewController: UIViewController {
         
     }
     
-    //when send it pressed, uploads message data to firebase
     @IBAction func sendPressed(_ sender: UIButton) {
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
             db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody,
@@ -63,9 +61,7 @@ class ChatViewController: UIViewController {
                 if let e = error {
                     print("Error saving data to firestore")
                 } else {
-                    DispatchQueue.main.async {
-                        self.messageTextField.text = ""
-                    }
+                    print("saved data")
                 }
             }
         }
@@ -81,17 +77,8 @@ extension ChatViewController : UITableViewDataSource {
     
     //populates each row of table with messages.body
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messages[indexPath.row]
-        
         let cell = chatTableView.dequeueReusableCell(withIdentifier: StaticsAndConstants.cellIdentifier, for: indexPath) as! MessageCell
-        cell.label.text = message.body
-        
-        //filter messages from current user
-        if message.sender == Auth.auth().currentUser?.email{
-            cell.messageBubble.backgroundColor = UIColor.systemYellow
-        } else { //message is from someone else
-            cell.messageBubble.backgroundColor = UIColor.systemGreen
-        }
+        cell.label.text = messages[indexPath.row].body
         return cell
     }
     
