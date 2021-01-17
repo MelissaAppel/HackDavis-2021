@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PostViewController: UIViewController {
 
@@ -13,6 +14,9 @@ class PostViewController: UIViewController {
     @IBOutlet weak var foodTypeTextField: UITextField!
     @IBOutlet weak var spicyTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,29 @@ class PostViewController: UIViewController {
 
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func onPostButtonPressed(_ sender: Any) {
+        // send data to database
+        let foodName = foodNameTextField.text
+        let foodType = foodTypeTextField.text
+        let spicy = spicyTextField.text
+        let description = descriptionTextView.text
+        // add food image
+        
+        db.collection("posts").addDocument(data: [
+            "description" : description,
+            "dishName": foodName,
+            "spice": spicy,
+            "type": foodType
+        ]) { (error) in
+            if let e = error  {
+                print(e)
+            } else {
+                print("successfully saved")
+            }
+        }
+    
     }
     /*
     // MARK: - Navigation
