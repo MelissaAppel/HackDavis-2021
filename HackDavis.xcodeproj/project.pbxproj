@@ -18,7 +18,6 @@
 		99AFF46125B36C0500B137A7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF46025B36C0500B137A7 /* MapViewController.swift */; };
 		99AFF46625B36C1F00B137A7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFF46525B36C1F00B137A7 /* ChatViewController.swift */; };
 		B4D0AF5F2AD9FFEAB490CBC9 /* Pods_HackDavis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BD7708D4162A72184E8EF8 /* Pods_HackDavis.framework */; };
-		DA11C50925B4143700094D5F /* ConversationMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11C50825B4143700094D5F /* ConversationMenuController.swift */; };
 		DA2862A525B3AB82005151D1 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2862A425B3AB82005151D1 /* RegisterController.swift */; };
 		DA2862AA25B3B005005151D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA2862A925B3B005005151D1 /* GoogleService-Info.plist */; };
 		DA2862B225B3B2E0005151D1 /* LoginPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2862B125B3B2E0005151D1 /* LoginPageController.swift */; };
@@ -70,7 +69,6 @@
 		BB403061EBAB0E428BD073F3 /* Pods-HackDavis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDavis.release.xcconfig"; path = "Target Support Files/Pods-HackDavis/Pods-HackDavis.release.xcconfig"; sourceTree = "<group>"; };
 		D0848D795A6F82D4955CA7A9 /* Pods-HackDavis-HackDavisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDavis-HackDavisUITests.debug.xcconfig"; path = "Target Support Files/Pods-HackDavis-HackDavisUITests/Pods-HackDavis-HackDavisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7EE523E3DED04DEC4059CC0 /* Pods-HackDavisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackDavisTests.debug.xcconfig"; path = "Target Support Files/Pods-HackDavisTests/Pods-HackDavisTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DA11C50825B4143700094D5F /* ConversationMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationMenuController.swift; sourceTree = "<group>"; };
 		DA2862A425B3AB82005151D1 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		DA2862A925B3B005005151D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DA2862B125B3B2E0005151D1 /* LoginPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageController.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				926BB6AD25B3808800A934CD /* InitialViewController.swift */,
 				DA2862A425B3AB82005151D1 /* RegisterController.swift */,
 				DA2862B125B3B2E0005151D1 /* LoginPageController.swift */,
-				DA11C50825B4143700094D5F /* ConversationMenuController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -527,7 +524,6 @@
 				DA2862C525B3BE17005151D1 /* MessageCell.swift in Sources */,
 				99AFF45C25B36BE500B137A7 /* DetailPostViewController.swift in Sources */,
 				99AFF46125B36C0500B137A7 /* MapViewController.swift in Sources */,
-				DA11C50925B4143700094D5F /* ConversationMenuController.swift in Sources */,
 				DA2862BF25B3B7BD005151D1 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
