@@ -42,7 +42,7 @@
             <objects>
                 <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="HackDavis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qws-X6-wcz">
@@ -199,6 +199,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOq-Vl-TAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-262.31884057971018" y="-455.35714285714283"/>
+        </scene>
+        <!--Near Me-->
+        <scene sceneID="Z5P-UZ-BbS">
+            <objects>
+                <viewController id="CLE-ZU-o7u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xdB-4r-pnq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Wcp-nU-fqs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Near Me" image="location" catalog="system" id="A3P-st-n0O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5y6-6k-Qyo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="-1783"/>
         </scene>
         <!--Conversation List Controller-->
         <scene sceneID="nMw-O7-rcF">
@@ -675,6 +691,7 @@
                         <segue destination="Y9b-Pr-6HF" kind="relationship" relationship="viewControllers" id="2tc-mJ-hIi"/>
                         <segue destination="5kX-Bc-eyR" kind="relationship" relationship="viewControllers" id="zTI-5r-o9L"/>
                         <segue destination="hNJ-GO-kMa" kind="relationship" relationship="viewControllers" id="oun-su-Wfq"/>
+                        <segue destination="CLE-ZU-o7u" kind="relationship" relationship="viewControllers" id="BA0-Ab-RaM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtx-Ie-quE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -784,13 +801,14 @@
     <inferredMetricsTieBreakers>
         <segue reference="Fq6-pe-vPO"/>
         <segue reference="B0H-Ub-UPH"/>
-        <segue reference="06N-HC-d0F"/>
+        <segue reference="n1j-pM-Ln1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="location" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
