@@ -545,7 +545,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-Nu-U4I">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-Nu-U4I">
                                 <rect key="frame" x="0.0" y="56" width="414" height="654"/>
                                 <connections>
                                     <outlet property="delegate" destination="96s-OE-Cgn" id="qfX-xy-0jC"/>
