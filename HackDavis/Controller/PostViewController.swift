@@ -15,10 +15,18 @@ class PostViewController: UIViewController {
     @IBOutlet weak var spicyTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+<<<<<<< HEAD
     var ref: DatabaseReference! = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+=======
+    let db = Firestore.firestore()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+>>>>>>> 29806d7465235038dc49dff721dceaad1db6d2b8
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +37,7 @@ class PostViewController: UIViewController {
     
     @IBAction func onPostButtonPressed(_ sender: Any) {
         // send data to database
+<<<<<<< HEAD
         var dataDictionary: [String: Any] = [:]
         dataDictionary["description"] = descriptionTextView.text
         dataDictionary["dishName"] = foodTypeTextField.text
@@ -39,5 +48,36 @@ class PostViewController: UIViewController {
     
     }
 
+=======
+        let foodName = foodNameTextField.text
+        let foodType = foodTypeTextField.text
+        let spicy = spicyTextField.text
+        let description = descriptionTextView.text
+        // add food image
+        
+        db.collection("posts").addDocument(data: [
+            "description" : description,
+            "dishName": foodName,
+            "spice": spicy,
+            "type": foodType
+        ]) { (error) in
+            if let e = error  {
+                print(e)
+            } else {
+                print("successfully saved")
+            }
+        }
+    
+    }
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+>>>>>>> 29806d7465235038dc49dff721dceaad1db6d2b8
 
 }
