@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,22 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3t-lk-bNz">
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J3t-lk-bNz">
                         <rect key="frame" x="10" y="0.0" width="265" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKq-J2-jH5">
-                                <rect key="frame" x="10" y="10" width="41.5" height="20.5"/>
+                                <rect key="frame" x="10" y="5" width="255" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="FGb-YG-rIX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="NKq-J2-jH5" secondAttribute="bottom" constant="10" id="Bi0-PS-NtC"/>
-                            <constraint firstItem="NKq-J2-jH5" firstAttribute="top" secondItem="J3t-lk-bNz" secondAttribute="top" constant="10" id="Ing-JC-aGK"/>
-                            <constraint firstItem="NKq-J2-jH5" firstAttribute="leading" secondItem="J3t-lk-bNz" secondAttribute="leading" constant="10" id="L6L-ez-eTV"/>
-                            <constraint firstAttribute="trailing" secondItem="NKq-J2-jH5" secondAttribute="trailing" constant="10" id="OHt-g5-LaK"/>
+                            <constraint firstAttribute="trailing" secondItem="NKq-J2-jH5" secondAttribute="trailing" id="HwO-l2-F8d"/>
+                            <constraint firstItem="NKq-J2-jH5" firstAttribute="top" secondItem="J3t-lk-bNz" secondAttribute="top" constant="5" id="NFg-eZ-QuM"/>
+                            <constraint firstAttribute="bottom" secondItem="NKq-J2-jH5" secondAttribute="bottom" constant="5" id="TbU-dO-q2T"/>
+                            <constraint firstItem="NKq-J2-jH5" firstAttribute="leading" secondItem="J3t-lk-bNz" secondAttribute="leading" constant="10" id="gtE-Wb-WuL"/>
+                            <constraint firstAttribute="height" constant="44" id="l2j-Si-XMh"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -49,9 +52,4 @@
             <point key="canvasLocation" x="140.57971014492756" y="150.66964285714286"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
