@@ -18,8 +18,9 @@ class MainFeedViewController: UIViewController {
     var descriptionArray = [String]()
     var dishNameArray = [String]()
     var imageArray = [String]()
-    var spiceArray = [String]()
+    var flavorArray = [String]()
     var typeArray = [String]()
+    var selectedIndex = IndexPath()
     
     var ref: DatabaseReference!
 
@@ -28,7 +29,7 @@ class MainFeedViewController: UIViewController {
         descriptionArray = MyDatabase.shared.getDescriptionArray()
         dishNameArray = MyDatabase.shared.getDishNameArray()
         imageArray = MyDatabase.shared.getImageArray()
-        spiceArray = MyDatabase.shared.getSpiceArray()
+        flavorArray = MyDatabase.shared.getFlavorArray()
         typeArray = MyDatabase.shared.getTypeArray()
 
         tableView.delegate = self
@@ -46,6 +47,8 @@ extension MainFeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
         cell.dishNameLabel.text = dishNameArray[indexPath.row]
+        cell.typeLabel.text = typeArray[indexPath.row]
+        cell.flavorLabel.text = flavorArray[indexPath.row]
         let url = URL(string: imageArray[indexPath.row])
         cell.dishImage.sd_setImage(with: url, placeholderImage: nil, options: SDWebImageOptions.highPriority,context: nil, progress: nil, completed: nil)
         return cell
@@ -55,7 +58,9 @@ extension MainFeedViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension MainFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath
         performSegue(withIdentifier: "goToDetail", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -64,7 +69,13 @@ extension MainFeedViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is DetailPostViewController {
             let vc = segue.destination as! DetailPostViewController
-
+//            let cell = sender as! UITableViewCell
+            let indexPath = selectedIndex
+            vc.dishName = dishNameArray[indexPath.row]
+            vc.imageURL = imageArray[indexPath.row]
+            vc.flavor = flavorArray[indexPath.row]
+            vc.type = typeArray[indexPath.row]
+            vc.descriptionText = descriptionArray[indexPath.row]
         }
     }
 }

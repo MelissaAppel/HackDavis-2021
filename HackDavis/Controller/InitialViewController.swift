@@ -17,7 +17,7 @@ class InitialViewController: UIViewController {
     var descriptionArray = [String]()
     var dishNameArray = [String]()
     var imageArray = [String]()
-    var spiceArray = [String]()
+    var flavorArray = [String]()
     var typeArray = [String]()
 
 
@@ -34,17 +34,17 @@ class InitialViewController: UIViewController {
        
     }
     func segue() {
-        self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
+//        self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
 
-//        if UserDefaults.standard.bool(forKey: "logIn") == true {
-//            print("User logged in ")
-//            let userId = UserDefaults.standard.string(forKey: "currentUserID")!
-//            MyDatabase.shared.setCurrentUserID(currentUserID: userId)
-//           self.performSegue(withIdentifier: "loggedIn", sender: nil)
-//        }else{
-//            print("User not Logged in ")
-//            self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
-//        }
+        if UserDefaults.standard.bool(forKey: "logIn") == true {
+            print("User logged in ")
+            let userId = UserDefaults.standard.string(forKey: "currentUserID")!
+            MyDatabase.shared.setCurrentUserID(currentUserID: userId)
+           self.performSegue(withIdentifier: "loggedIn", sender: nil)
+        }else{
+            print("User not Logged in ")
+            self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
+        }
     }
     func getData() {
         //Network request snippet
@@ -71,8 +71,8 @@ class InitialViewController: UIViewController {
                             self.dishNameArray.append(dishName)
                         let image = post["image"] as! String
                             self.imageArray.append(image)
-                        let spice = post["spice"] as! String
-                            self.spiceArray.append(spice)
+                        let flavor = post["flavor"] as! String
+                            self.flavorArray.append(flavor)
                         let type = post["type"] as! String
                             self.typeArray.append(type)
                     }
@@ -80,7 +80,7 @@ class InitialViewController: UIViewController {
                     MyDatabase.shared.setDescriptionArray(descriptionArray: self.descriptionArray)
                     MyDatabase.shared.setDishNameArray(dishNameArray: self.dishNameArray)
                     MyDatabase.shared.setImageArray(imageArray: self.imageArray)
-                    MyDatabase.shared.setSpiceArray(spiceArray: self.spiceArray)
+                    MyDatabase.shared.setFlavorArray(flavorArray: self.flavorArray)
                     MyDatabase.shared.setTypeArray(typeArray: self.typeArray)
                 }
                }

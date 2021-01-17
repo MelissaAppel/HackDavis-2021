@@ -16,7 +16,7 @@ class MyDatabase {
     var descriptionArray = [String]()
     var dishNameArray = [String]()
     var imageArray = [String]()
-    var spiceArray = [String]()
+    var flavorArray = [String]()
     var typeArray = [String]()
 
     private init() {}
@@ -34,8 +34,8 @@ class MyDatabase {
     func setImageArray(imageArray:[String]){
         self.imageArray = imageArray
     }
-    func setSpiceArray(spiceArray:[String]){
-        self.spiceArray = spiceArray
+    func setFlavorArray(flavorArray:[String]){
+        self.flavorArray = flavorArray
     }
     func setTypeArray(typeArray:[String]){
         self.typeArray = typeArray
@@ -62,8 +62,8 @@ class MyDatabase {
     func getImageArray() -> [String] {
         return imageArray
     }
-    func getSpiceArray() -> [String] {
-        return spiceArray
+    func getFlavorArray() -> [String] {
+        return flavorArray
     }
     func getTypeArray() -> [String] {
         return typeArray

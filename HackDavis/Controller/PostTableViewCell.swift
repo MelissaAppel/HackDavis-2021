@@ -11,6 +11,9 @@ class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dishImage: UIImageView!
     @IBOutlet weak var dishNameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var flavorLabel: UILabel!
+    @IBOutlet weak var ratingImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
