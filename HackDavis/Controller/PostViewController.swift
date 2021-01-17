@@ -15,11 +15,18 @@ class PostViewController: UIViewController {
     @IBOutlet weak var spicyTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+<<<<<<< HEAD
+    var ref: DatabaseReference! = Database.database().reference()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+=======
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+>>>>>>> 29806d7465235038dc49dff721dceaad1db6d2b8
         // Do any additional setup after loading the view.
     }
     
@@ -30,6 +37,18 @@ class PostViewController: UIViewController {
     
     @IBAction func onPostButtonPressed(_ sender: Any) {
         // send data to database
+<<<<<<< HEAD
+        var dataDictionary: [String: Any] = [:]
+        dataDictionary["description"] = descriptionTextView.text
+        dataDictionary["dishName"] = foodTypeTextField.text
+        dataDictionary["spice"] = spicyTextField.text
+        dataDictionary["type"] = foodTypeTextField.text
+        ref.child("posts").childByAutoId().setValue(dataDictionary)
+        self.dismiss(animated: true, completion: nil)
+    
+    }
+
+=======
         let foodName = foodNameTextField.text
         let foodType = foodTypeTextField.text
         let spicy = spicyTextField.text
@@ -59,5 +78,6 @@ class PostViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+>>>>>>> 29806d7465235038dc49dff721dceaad1db6d2b8
 
 }
