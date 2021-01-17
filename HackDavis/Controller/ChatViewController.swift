@@ -14,20 +14,42 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     let db = Firestore.firestore()
     
-    var messages : [Message] = [
-        Message(sender: "1@2.com", body: "Hey!"),
-        Message(sender: "2@3.com", body: "Hello!"),
-        Message(sender: "3@4.com", body: "Hiya")
-    ]
+    var messages : [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.register(UINib(nibName: StaticsAndConstants.cellNibName, bundle: nil), forCellReuseIdentifier: StaticsAndConstants.cellIdentifier)
+        
+        loadMessages()
     }
     
-
+    func loadMessages(){
+        messages = []
+        db.collection(StaticsAndConstants.fStore.collectionName).getDocuments { (querySnapshot, error) in
+            if let e = error {
+                print("issue retreiving data \(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments{
+                        let data = doc.data()
+                        if let messageSender = data[StaticsAndConstants.fStore.senderField] as? String, let messageBody = data[StaticsAndConstants.fStore.bodyField] as? String {
+                            let newMessage = Message(sender: messageSender, body: messageBody)
+                            self.messages.append(newMessage)
+                            
+                            DispatchQueue.main.async{
+                                self.chatTableView.reloadData()
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
     @IBAction func sendPressed(_ sender: UIButton) {
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email {
             db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody]) { (error) in
