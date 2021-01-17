@@ -390,6 +390,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-Nu-U4I">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <connections>
+                                    <outlet property="delegate" destination="96s-OE-Cgn" id="qfX-xy-0jC"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pm7-wQ-D2W"/>
@@ -402,6 +405,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="niz-Wv-5hI"/>
+                    <connections>
+                        <outlet property="mapView" destination="aJw-Nu-U4I" id="pVk-7o-pZB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXX-he-TYF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
