@@ -13,6 +13,7 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     let db = Firestore.firestore()
+    var listOfMessages : [String] = []
         
     var messages : [Message] = []
     
@@ -64,7 +65,7 @@ class ChatViewController: UIViewController {
                 }
     }
     
-    //when send it pressed, uploads message data to firebase
+    //when send is pressed, uploads message data to firebase
     @IBAction func sendPressed(_ sender: UIButton) {
         if let messageBody = messageTextField.text, let messageSender = Auth.auth().currentUser?.email{
             db.collection(StaticsAndConstants.fStore.collectionName).addDocument(data: [StaticsAndConstants.fStore.senderField : messageSender, StaticsAndConstants.fStore.bodyField: messageBody, StaticsAndConstants.fStore.theirField : MyDatabase.theirEmail,
@@ -81,11 +82,26 @@ class ChatViewController: UIViewController {
         }
     }
     
+    /*func filterConversations(){
+        for i in 0..<messages.count {
+            //if you sent them a message and theyr received it
+            if messages[i].sender == Auth.auth().currentUser?.email && MyDatabase.theirEmail == messages[i].them{
+                listOfMessages.append(messages[i].body)
+            }
+            //if they sent you a message
+            if messages[i].sender == MyDatabase.theirEmail && Auth.auth().currentUser?.email == MyDatabase.theirEmail {
+                listOfMessages.append(messages[i].body)
+            }
+        }
+    }*/
 
 }
 
+
+
 extension ChatViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //filterConversations()
         return messages.count
     }
     
@@ -109,6 +125,27 @@ extension ChatViewController : UITableViewDataSource {
     
     
 }
+
+/*
+ //    Create array of strings of unique senders
+     func filterConversations(){
+         for i in 0..<conversations.count {
+             let convo = conversations[i].sender
+             if !listOfSenders.contains(convo) && convo != Auth.auth().currentUser?.email{
+                 listOfSenders.append(convo)
+                 numConvos += 1
+             }
+         }
+     }
+ }
+
+
+ extension ConversationListController : UITableViewDataSource {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         filterConversations()
+         return listOfSenders.count
+     }
+ */
 
 extension ChatViewController : UITableViewDelegate {
     //Called when text cell is clicked - currently disabled
