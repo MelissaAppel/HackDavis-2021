@@ -61,9 +61,9 @@ class InitialViewController: UIViewController {
 //                   print(self.posts)
                    MyDatabase.shared.setAllPosts(posts: self.posts)
                    
-                    for i in stride(from: self.posts.count-1, to: -1, by: -1) {
+                    //for i in stride(from: self.posts.count-1, to: -1, by: -1) {
 
-//                    for i in self.posts.count...0 {
+                   /* for i in self.posts.count...0 {
                         let post = self.posts[i]
                         let description = post["description"] as! String
                             self.descriptionArray.append(description)
@@ -75,7 +75,7 @@ class InitialViewController: UIViewController {
                             self.flavorArray.append(flavor)
                         let type = post["type"] as! String
                             self.typeArray.append(type)
-                    }
+                    }*/
                     
                     MyDatabase.shared.setDescriptionArray(descriptionArray: self.descriptionArray)
                     MyDatabase.shared.setDishNameArray(dishNameArray: self.dishNameArray)
@@ -85,6 +85,9 @@ class InitialViewController: UIViewController {
                 }
                }
         task.resume()
+               
     }
+        
 }
+
 
