@@ -34,17 +34,17 @@ class InitialViewController: UIViewController {
        
     }
     func segue() {
-//        self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
+        self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
 
-        if UserDefaults.standard.bool(forKey: "logIn") == true {
-            print("User logged in ")
-            let userId = UserDefaults.standard.string(forKey: "currentUserID")!
-            MyDatabase.shared.setCurrentUserID(currentUserID: userId)
-           self.performSegue(withIdentifier: "loggedIn", sender: nil)
-        }else{
-            print("User not Logged in ")
-            self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
-        }
+//        if UserDefaults.standard.bool(forKey: "logIn") == true {
+//            print("User logged in ")
+//            let userId = UserDefaults.standard.string(forKey: "currentUserID")!
+//            MyDatabase.shared.setCurrentUserID(currentUserID: userId)
+//           self.performSegue(withIdentifier: "loggedIn", sender: nil)
+//        }else{
+//            print("User not Logged in ")
+//            self.performSegue(withIdentifier: "notLoggedIn", sender: nil)
+//        }
     }
     func getData() {
         //Network request snippet

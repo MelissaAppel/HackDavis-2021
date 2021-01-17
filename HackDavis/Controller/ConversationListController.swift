@@ -14,6 +14,7 @@ class ConversationListController: UIViewController {
     
     let database = Firestore.firestore()
     var conversations : [Message] = []
+    var conversationsSenders : [Message] = []
     var numConvos : Int = 0
     var listOfSenders : [String] = []
     
@@ -44,8 +45,6 @@ class ConversationListController: UIViewController {
                             
                             DispatchQueue.main.async{
                                 self.conversationTableView.reloadData()
-                                let indexPath = IndexPath(row: self.conversations.count - 1, section: 0)
-                                self.conversationTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                             
                         }
@@ -57,7 +56,7 @@ class ConversationListController: UIViewController {
     }
     
 
-    /*//Create array of strings of unique senders
+//    Create array of strings of unique senders
     func filterConversations(){
         for i in 0..<conversations.count {
             let convo = conversations[i].sender
@@ -66,26 +65,25 @@ class ConversationListController: UIViewController {
                 numConvos += 1
             }
         }
-        print(listOfSenders.count)
-    }*/
+    }
 }
-
 
 
 extension ConversationListController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return conversations.count
+        filterConversations()
+        return listOfSenders.count
     }
     
     //populates each row of table with messages.body
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = conversations[indexPath.row]
-        
         let cell = conversationTableView.dequeueReusableCell(withIdentifier: StaticsAndConstants.cellIdentifier, for: indexPath) as! MessageCell
-        cell.label.text = message.sender
+        
+        let sender = listOfSenders[indexPath.row]
+        cell.label.text = sender
         
         //filter messages from current user
-        if message.sender == Auth.auth().currentUser?.email{
+        if sender == Auth.auth().currentUser?.email{
             cell.messageBubble.backgroundColor = UIColor.systemYellow
             cell.label.backgroundColor = UIColor.systemYellow
         } else { //message is from someone else
