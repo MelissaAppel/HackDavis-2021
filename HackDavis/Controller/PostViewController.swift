@@ -31,6 +31,8 @@ class PostViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
 
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -46,10 +48,10 @@ class PostViewController: UIViewController {
         dataDictionary["type"] = foodType
         dataDictionary["latitude"] = 5.0 as! Double
         dataDictionary["longitude"] = 4.0 as! Double
-        // just an example 
+        // just an example
         dataDictionary["image"] = "https://firebasestorage.googleapis.com/v0/b/hack-davis-f5888.appspot.com/o/Cauliflower%20Tacos.jpg?alt=media&token=6339f58f-4561-428b-b49d-be44c06f16f4"
         ref.child("Database").child("posts").child(String(id)).setValue(dataDictionary)
-        id += 1
+      
         self.dismiss(animated: true, completion: nil)
     
     }
@@ -72,7 +74,9 @@ class PostViewController: UIViewController {
             spice = "spicy"
         }
     }
-    
+    @IBAction func unwindToTop(segue: UIStoryboardSegue) {
+     
+    }
        
     
 }
