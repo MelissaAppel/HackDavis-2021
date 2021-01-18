@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         fstore = Firestore.firestore()
         authUI = FUIAuth.defaultAuthUI()
         authUI?.delegate = self
-        let providers : [FUIAuthProvider] = [FUIGoogleAuth()]
+        let providers : [FUIAuthProvider] = [FUIGoogleAuth(),FUIEmailAuth()]
         authUI?.providers = providers
         if Auth.auth().currentUser != nil {
             let userID = (Auth.auth().currentUser?.uid)!
