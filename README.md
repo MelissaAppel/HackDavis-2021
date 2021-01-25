@@ -76,7 +76,7 @@ For use on iOS devices running iOS 13.0 and higher.
 1. Simulation build through Xcode required until published on app store. 
 
 ## Storyboard
-<img src="images/storyboard.png" alt="Logo" width="375" height="610">
+<img src="images/storyboard.png" alt="Logo" width="754" height="610">
 
 <!-- USAGE EXAMPLES -->
 ## Screenshots from App
